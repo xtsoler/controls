@@ -1,0 +1,40 @@
+html {
+    touch-action: none;
+    -ms-touch-action: none;
+    overscroll-behavior: contain;
+    -webkit-touch-callout: none;    /* Safari */
+    -webkit-user-select: none;      /* Chrome */
+    -moz-user-select: none;         /* Firefox */
+    -ms-user-select: none;          /* Internet Explorer/Edge */
+    user-select: none;
+}
+
+* {
+    margin:0;
+    padding:0;
+} /* to remove the top and left whitespace */
+	
+#bg { position: fixed; top: 0; left: 0; opacity: 0.25; }
+.bgwidth { width: 100%; }
+.bgheight { height: 100%; }
+
+#page-wrap { position: relative; width: 400px; margin: 50px auto; padding: 20px; background-color: rgba(255, 255, 255, 0.7); -moz-box-shadow: 0 0 20px black; -webkit-box-shadow: 0 0 20px black; box-shadow: 0 0 20px black; }
+p { font: 15px/2 Georgia, Serif; margin: 0 0 30px 0; text-indent: 40px; }
+
+html, body {
+	width:100%;
+    height:100%;
+	overflow: hidden;
+}
+canvas {
+	cursor: url(images/d2cursor.png), default; 
+	display:block;
+}
+@font-face {
+	font-family: 'exocet';
+	src: url('ufonts.com_exocet-light.ttf');
+}
+
+.disable-dbl-tap-zoom {
+	touch-action: manipulation;
+}

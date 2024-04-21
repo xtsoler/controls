@@ -1,6 +1,6 @@
 # controls
 What's this? 
-Maybe it's faster to understand by having a look at the demo over here: https://xtsoler.github.io/controls/
+Maybe it's faster to understand by having a look at the demo over here: https://xtsoler.github.io/controls.js/
 
 controls.js is a little javascript library that tries to offer on screen controls for your game. The controls will work with keyboard, mouse and a controller if it is properly detected by a compatible broswer.
 

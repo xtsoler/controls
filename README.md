@@ -1,4 +1,4 @@
-# controls
+# controls.js
 What's this? 
 Maybe it's faster to understand by having a look at the demo over here: https://xtsoler.github.io/controls.js/
 

@@ -7,8 +7,11 @@ controls.js is a little javascript library that tries to offer on screen control
 Fastest way to see how it works is to clone the repository and have a look at the js/main.js file:
 
 const controls = new Controls();
+
 const game = new BrosGame(controls);
+
 game.init();
 
 We create a new Controls object and then feed it to our game constructor, in this case BrosGame which is a simple example game.
 Then some references to that object are necesary so that the on screen controls are operational and also properly depicted when pressed.
+Look for comments before references to this.controls object in js/brosGame.js

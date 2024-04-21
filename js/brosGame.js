@@ -1,6 +1,7 @@
 
         class BrosGame {
             constructor(controls) {
+                // make the controls object available in our games object
                 this.controls = controls;
                 //this.canvas = document.getElementById('mainCanvas');
                 this.canvas = document.createElement('canvas');
@@ -78,31 +79,6 @@
                     });
                 }
             }
-            /*
-            handleKeyDown(event) {
-                if (this.gameState === 'playing') {
-                    if (event.key === 'ArrowLeft') {
-                        this.player.x -= this.player.speed;
-                        this.player.facingLeft = true;
-                    } else if (event.key === 'ArrowRight') {
-                        this.player.x += this.player.speed;
-                        this.player.facingLeft = false;
-                    } else 
-                    if (event.key === ' ') {
-                        if (!this.snowball.visible) {
-                            this.snowball.visible = true;
-                            this.snowball.x = this.player.x + this.player.width / 2;
-                            this.snowball.y = this.player.y;
-                        }
-                    } else if (event.key === 'ArrowUp' && this.player.isOnGround) {
-                        this.player.jumping = true;
-                        this.player.isOnGround = false;
-                    }
-                } else if (this.gameState === 'start' && event.key === 'Enter') {
-                    this.gameState = 'playing';
-                }
-            }
-            */
 
             update() {
                 if (this.gameState === 'playing') {
@@ -121,7 +97,7 @@
                             this.player.y = this.canvas.height - this.player.height;
                         }
                     }
-                    // respect active control commands
+                    // These calls to the controls object is to respect active control commands
                     if (this.controls.bit_test(this.controls.input_byte_0, 6)) {// P1 LEFT
                         this.player.x += this.player.speed;
                         this.player.facingLeft = false;
@@ -221,20 +197,16 @@
                     this.ctx.fillStyle = 'black';
                     this.ctx.fillText('Level: ' + this.level, 10, 20);
                 }
+                // these calls to the controls object is for drawing the game frame (this.canvas) on the existing canvas in the controls object
                 this.controls.ctx.clearRect(controls.videoX, controls.videoY, controls.videoWidth, controls.videoHeight);
                 this.controls.ctx.drawImage(this.canvas, controls.videoX, controls.videoY, controls.videoWidth, controls.videoHeight);
             }
 
             gameLoop() {
                 this.update();
-                
-                
-                //this.controls.refreshMainCanvas();
+                // this call to the controls object is required so that any gamepad controls are properly registered and reflected on the on screen buttons
                 this.controls.updateStatus();
                 this.draw();
                 requestAnimationFrame(() => this.gameLoop());
             }
         }
-
-        //const game = new BrosGame();
-        //game.init();

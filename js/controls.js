@@ -336,12 +336,12 @@ class Controls{
                 }
             }
             this.ctx.fillText(this.debug_text, 40, 40);
-            this.ctx.fillText(output, 40, 60);
+            this.ctx.fillText(output, 40, 80);
             var curr_input = "-";
             if(this.last_user_input_method_controller){
                 curr_input = "controller";
             }
-            this.ctx.fillText(curr_input, 40, 80);
+            this.ctx.fillText(curr_input, 40, 120);
         }
             
     }
